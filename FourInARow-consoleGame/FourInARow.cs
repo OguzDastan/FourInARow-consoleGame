@@ -9,7 +9,7 @@ namespace FourInARow_consoleGame
     class FourInARow
     {
         char[,] twoDimensionalArray = new char[6,6];
-
+        private bool gameOver = false;
         /// <summary>
         /// Initializes a new instance of the <see cref="FourInARow"/> class.
         /// </summary>
