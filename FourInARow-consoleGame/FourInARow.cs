@@ -11,6 +11,14 @@ namespace FourInARow_consoleGame
         char[,] twoDimensionalArray = new char[6,6];
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FourInARow"/> class.
+        /// </summary>
+        public FourInARow()
+        {
+            Console.WriteLine("cocain is hellofa drug son!");
+        }
+
+        /// <summary>
         /// get a singel value from our two dimensional array
         /// </summary>
         /// <param name="x">x axis</param>
@@ -28,7 +36,7 @@ namespace FourInARow_consoleGame
         /// <param name="y">y axis position</param>
         /// <param name="value">the char you want to set</param>
         /// <returns></returns>
-        public char setSingleValue(int x, int y, char value)
+        public void setSingleValue(int x, int y, char value)
         {
              twoDimensionalArray[x, y] = value;
         }
