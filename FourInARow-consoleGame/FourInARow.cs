@@ -29,13 +29,31 @@ namespace FourInARow_consoleGame
 
         public void printBoardToScreen()
         {
-            Console.Clear();
             for (int x = 0; x < twoDimensionalArray.GetLength(0); x++)
             {
                 Console.Write("|");
                 for (int y = 0; y < twoDimensionalArray.GetLength(1); y++)
                 {
-                    Console.Write(twoDimensionalArray[x, y]+"|");
+                    switch (twoDimensionalArray[x, y])
+                    {
+                        case 'G':
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor =ConsoleColor.Green;
+                            break;
+                        case 'R':
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        default:
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.ForegroundColor = ConsoleColor.White;
+                            break;
+
+                    }
+                    Console.Write(twoDimensionalArray[x, y]);
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("|");
                 }
                 Console.WriteLine();
             }
@@ -100,7 +118,6 @@ namespace FourInARow_consoleGame
             }
             else
             {
-                Console.WriteLine("Du må ikke sætte en brik her");
                 return false;
             }
         }

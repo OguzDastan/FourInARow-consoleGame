@@ -17,10 +17,22 @@ namespace FourInARow_consoleGame
             Symbol = c;
         }
 
-        public int TakeTurn()
+        public void TakeTurn()
         {
+            Console.Clear();
+            logic.board.printBoardToScreen();
             Console.WriteLine(Symbol + " please take your turn..");
-            return Int32.Parse(Console.ReadLine());
+
+            int x = Int32.Parse(Console.ReadLine());
+            while (!logic.board.setSingleValue(0, x, Symbol))
+            {
+                Console.Clear();
+                logic.board.printBoardToScreen();
+                Console.WriteLine("can't place peice at x");
+                Console.WriteLine(Symbol + " please take your turn..");
+                x = Int32.Parse(Console.ReadLine());
+            }
+            logic.board.FixBoard();
         }
     }
 }

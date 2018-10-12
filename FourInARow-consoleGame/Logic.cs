@@ -8,8 +8,8 @@ namespace FourInARow_consoleGame
 {
     class Logic
     {
-        private Player p1, p2;
-        private FourInARow board;
+        public Player p1, p2;
+        public FourInARow board;
         private bool gameOver;
 
         public Logic(FourInARow f)
@@ -26,9 +26,8 @@ namespace FourInARow_consoleGame
             gameOver = false;
             while (!gameOver)
             {
-                board.printBoardToScreen();
-                board.setSingleValue(0, p1.TakeTurn(), p1.Symbol);
-                board.FixBoard();
+                p1.TakeTurn();
+                p2.TakeTurn();
             }
 
         }
