@@ -41,6 +41,8 @@ namespace FourInARow_consoleGame
              twoDimensionalArray[x, y] = value;
         }
     }
-
+    ///
+    /// hvad sker der?
+    /// 
     
 }
