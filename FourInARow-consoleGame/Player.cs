@@ -23,12 +23,12 @@ namespace FourInARow_consoleGame
             logic.board.printBoardToScreen();
             Console.WriteLine(Symbol + " please take your turn..");
 
-            int x = Int32.Parse(Console.ReadLine());
+            int x = Int32.Parse(Console.ReadLine())-1;
             while (!logic.board.setSingleValue(0, x, Symbol))
             {
                 Console.Clear();
                 logic.board.printBoardToScreen();
-                Console.WriteLine("can't place peice at x");
+                Console.WriteLine("can't place piece at "+x);
                 Console.WriteLine(Symbol + " please take your turn..");
                 x = Int32.Parse(Console.ReadLine());
             }
